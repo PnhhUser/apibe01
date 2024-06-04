@@ -1,4 +1,11 @@
-import { Entity, Column, IsNull, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BaseEntity } from 'typeorm';
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+}
+    from 'typeorm';
 
 @Entity("users")
 export class UserEntity {
@@ -17,8 +24,8 @@ export class UserEntity {
     @Column({ nullable: true })
     phone: string;
 
-    @Column()
-    role: string;
+    @Column({ default: 1 })
+    role: number;
 
     @CreateDateColumn()
     createDate: Date;

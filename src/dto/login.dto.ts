@@ -1,15 +1,12 @@
 import {
-    IsDate,
     IsEmail,
     IsNotEmpty,
     MaxLength,
-    MinLength,
+    MinLength
 } from "class-validator";
 
-export class SignupDTO {
+export class LoginDTO {
 
-    @IsNotEmpty()
-    name: string;
 
     @IsNotEmpty()
     @IsEmail({}, { message: "Invalid email" })
@@ -20,13 +17,5 @@ export class SignupDTO {
     @MaxLength(20)
     password: string;
 
-    @IsNotEmpty()
-    @MinLength(6)
-    @MaxLength(20)
-    rePassword: string;
-
-    updateDate: Date;
-
-    createDate: Date;
 
 }

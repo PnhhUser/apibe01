@@ -1,8 +1,7 @@
 import { Role } from "src/common/enums";
-import { baseDTO } from "./base.dto";
 
 
-export class UserDTO extends baseDTO {
+export class UserDTO {
 
     name: string;
 
@@ -13,4 +12,8 @@ export class UserDTO extends baseDTO {
     phone: string;
 
     role: string;
+
+    updateDate: Date;
+
+    createDate: Date;
 }

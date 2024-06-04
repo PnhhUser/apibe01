@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ApiModule } from './api/api.module';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity } from './entities/user.entity';
-import { dataSourceOptions, typeOrmAsyncConfig } from 'db/db';
+import { typeOrmAsyncConfig } from 'db/db';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
 import configuration from './configuration';
 
 
@@ -17,7 +17,8 @@ import configuration from './configuration';
     }),
     TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     ApiModule,
-    UserModule
+    UserModule,
+    AuthModule
   ],
 })
 export class AppModule { }
